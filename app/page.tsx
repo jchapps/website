@@ -10,7 +10,7 @@ const intro2 =
 export default function Home() {
   return (
     <>
-      <div className="grid grid-cols-2 max-laptop:grid-cols-2 gap-x-5">
+      <div className="grid grid-cols-2 max-laptop:grid-cols-1 gap-x-5">
         <div className="w-full  max-laptop:col-span-2">
           <Title>いらっしゃいませ</Title>
           <InfoItem>{intro}</InfoItem>
