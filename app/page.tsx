@@ -1,32 +1,19 @@
-import InfoItem from "@/components/InfoItem";
-import Title from "@/components/Title";
-
-const intro =
-  "Hello, I'm Josh, a software engineer living and working in Japan. I primarily focus on front-end development but recently have found myself playing around with the back-end too.";
-
-const intro2 =
-  "I plan to add more content here soon including, but not limited to, projects, blog posts and general shithousery.";
+import Blogs from "@/components/Blogs";
+import Intro from "@/components/Intro";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
     <>
       <div className="grid grid-cols-2 max-laptop:grid-cols-1 gap-x-5">
-        <div className="w-full  max-laptop:col-span-2">
-          <Title>いらっしゃいませ</Title>
-          <InfoItem>{intro}</InfoItem>
-          <InfoItem>{intro2}</InfoItem>
-        </div>
-        <div className="max-laptop:pt-8">
-          <Title href="/blog">Recent Posts</Title>
-          <InfoItem>{"٩꒰ʘʚʘ๑꒱۶ Interesting blogs coming soon"}</InfoItem>
-        </div>
+        <Intro />
+        <Blogs />
       </div>
-      <div className="flex justify-between">
-        <div className="pt-8">
-          <Title href="/projects">Projects</Title>
-          <InfoItem>{"Cool projects coming soon(⁄ ⁄•⁄ω⁄•⁄ ⁄)"}</InfoItem>
-        </div>
-      </div>
+      <Projects />
+      <p className="m-16 relative group">
+        <span>Hover over me</span>
+        <span className="absolute left-0 -bottom-1 w-full h-2 bg-secondary -z-10 group-hover:h-full group-hover:transition-all"></span>
+      </p>
     </>
   );
 }
