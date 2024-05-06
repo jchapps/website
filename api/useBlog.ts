@@ -1,13 +1,13 @@
 import db from "@/utils/db";
 
 type Options = {
-  id: number;
+  slug: number;
 };
 
-export const useBlog = async ({ id }: Options) => {
+export const useBlog = async ({ slug }: Options) => {
   const blog = await db.post.findUnique({
     where: {
-      id,
+      id: slug,
     },
   });
   return blog;
