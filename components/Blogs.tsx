@@ -17,7 +17,7 @@ const Blogs: React.FunctionComponent = async () => {
               key={blog.title}
               className="before:content-['☞'] before:text-primary pt-4 cursor-pointer max-w-fit"
             >
-              <Link href={`${blog.id}`}>&nbsp;{blog.title}</Link>
+              <Link href={`blog/${blog.id}`}>&nbsp;{blog.title}</Link>
             </InfoItem>
             <InfoItem className="text-sm" key={blog.title}>
               {convertDate(blog.createdAt)}

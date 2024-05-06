@@ -5,10 +5,10 @@ type Options = {
 };
 
 export const useBlog = async ({ id }: Options) => {
-  const blogs = await db.post.findUnique({
+  const blog = await db.post.findUnique({
     where: {
-      id: id,
+      id,
     },
   });
-  return blogs;
+  return blog;
 };
