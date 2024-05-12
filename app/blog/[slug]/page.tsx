@@ -1,21 +1,18 @@
-import { useBlog } from "@/api/useBlog";
 import InfoItem from "@/components/InfoItem";
 import Title from "@/components/Title";
+import { getPostBySlug } from "@/lib/posts";
 
 export default async function BlogDetails({
   params,
 }: {
   params: { slug: string };
 }) {
-  const slug = +params.slug;
-  const blog = await useBlog({ slug });
-
-  // TODO: BlogItem Component
+  const post = getPostBySlug(params.slug);
 
   return (
     <>
-      <Title>{blog?.title}</Title>
-      <InfoItem>epic content</InfoItem>
+      <Title>{post.title}</Title>
+      <InfoItem>{post.content}</InfoItem>
     </>
   );
 }

@@ -1,32 +1,26 @@
-import { useBlogs } from "@/api/useBlogs";
 import InfoItem from "./InfoItem";
 import Title from "./Title";
-import { convertDate } from "@/utils/convertDate";
 import Link from "next/link";
+import { getAllPosts } from "@/lib/posts";
+import React from "react";
 
-const Blogs: React.FunctionComponent = async () => {
-  const blogs = await useBlogs();
+export default function Blogs() {
+  const allPosts = getAllPosts();
 
   return (
     <div className="max-laptop:pt-8">
       <Title href="/blog">Latest Posts</Title>
-      {blogs.map((blog) => {
-        return (
-          <>
-            <InfoItem
-              key={blog.title}
-              className="before:content-['☞'] before:text-primary pt-4 cursor-pointer max-w-fit"
-            >
-              <Link href={`blog/${blog.id}`}>&nbsp;{blog.title}</Link>
-            </InfoItem>
-            <InfoItem className="text-sm" key={blog.title}>
-              {convertDate(blog.createdAt)}
-            </InfoItem>
-          </>
-        );
-      })}
+      {allPosts.map(({ date, title, slug }) => (
+        <React.Fragment key={title}>
+          <InfoItem
+            key={title}
+            className="before:content-['☞'] before:text-primary pt-4 cursor-pointer max-w-fit"
+          >
+            <Link href={`blog/${slug}`}>&nbsp;{title}</Link>
+          </InfoItem>
+          <InfoItem className="text-sm">{date}</InfoItem>
+        </React.Fragment>
+      ))}
     </div>
   );
-};
-
-export default Blogs;
+}
