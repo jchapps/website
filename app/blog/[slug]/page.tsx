@@ -11,13 +11,13 @@ export default async function BlogDetails({
 
   const content = await markdownToHtml(post.content || "");
 
-  /* TODO: content styles */
   return (
     <>
       <Title>{post.title}</Title>
-      <div className="max-w-2xl mx-auto">
-        <div dangerouslySetInnerHTML={{ __html: content }} />
-      </div>
+      <div
+        dangerouslySetInnerHTML={{ __html: content }}
+        className="[&>h2]:font-semibold text-2xl [&>p]:text-2xl [&>p>img]:w-60 [&>p>img]:m-auto"
+      />
     </>
   );
 }

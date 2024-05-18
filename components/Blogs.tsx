@@ -14,7 +14,7 @@ export default function Blogs() {
         <React.Fragment key={title}>
           <InfoItem
             key={title}
-            className="before:content-['☞'] before:text-primary pt-4 cursor-pointer max-w-fit"
+            className="before:content-['☞'] before:text-primary pt-4 cursor-pointer max-w-fit hover:text-secondary transition"
           >
             <Link href={`blog/${slug}`}>&nbsp;{title}</Link>
           </InfoItem>

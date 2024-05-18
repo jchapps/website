@@ -5,7 +5,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Navigation: React.FunctionComponent<Props> = ({ children }) => {
+const NavWrapper: React.FunctionComponent<Props> = ({ children }) => {
   return (
     <section className="h-screen overflow-hidden relative">
       <div className="bg-repeat w-full h-full background-image">
@@ -19,4 +19,4 @@ const Navigation: React.FunctionComponent<Props> = ({ children }) => {
   );
 };
 
-export default Navigation;
+export default NavWrapper;

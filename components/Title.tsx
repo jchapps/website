@@ -7,7 +7,7 @@ type Props = {
 const Title: React.FunctionComponent<Props> = ({ children, href }) => {
   return href !== undefined ? (
     <Link href={href} className="block w-fit">
-      <h2 className="text-2xl font-semibold w-fit after:content-[''] after:block after:bottom-0 after:left-0 after:right-0 after:h-1 after:rounded-md after:bg-secondary after:hover:bg-primary after:hover:transition">
+      <h2 className="text-2xl font-semibold w-fit after:content-[''] after:block after:h-1 after:rounded-md after:bg-secondary hover:text-secondary transition ease-in-out after:hover:transition">
         {children}
       </h2>
     </Link>

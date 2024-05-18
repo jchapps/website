@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Divider from "./Divider";
+import Divider from "../Divider";
 
 const Footer: React.FunctionComponent = () => {
   return (

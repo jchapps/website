@@ -11,8 +11,8 @@ const Intro: React.FunctionComponent = () => {
   return (
     <div className="w-full  max-laptop:col-span-2">
       <Title>いらっしゃいませ</Title>
-      <InfoItem className="pt-7 ">{intro}</InfoItem>
-      <InfoItem className="pt-7 ">{intro2}</InfoItem>
+      <InfoItem className="pt-7">{intro}</InfoItem>
+      <InfoItem className="pt-7">{intro2}</InfoItem>
     </div>
   );
 };
