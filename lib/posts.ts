@@ -7,6 +7,7 @@ export type Post = {
   title: string;
   content: string;
   slug: string;
+  blurb: string;
 };
 
 const postsDirectory = join(process.cwd(), "posts");

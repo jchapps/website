@@ -18,6 +18,8 @@ const config: Config = {
     colors: {
       primary: "#222222",
       secondary: "#80e5a6",
+      // white: "#FDFFF7",
+      white: "#F6FFF8",
     },
     screens: {
       laptop: "717px",
