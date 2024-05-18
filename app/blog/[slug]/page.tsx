@@ -1,5 +1,5 @@
-import InfoItem from "@/components/InfoItem";
 import Title from "@/components/Title";
+import markdownToHtml from "@/lib/markdownConverter.ts/markdownToHtml";
 import { getPostBySlug } from "@/lib/posts";
 
 export default async function BlogDetails({
@@ -9,10 +9,15 @@ export default async function BlogDetails({
 }) {
   const post = getPostBySlug(params.slug);
 
+  const content = await markdownToHtml(post.content || "");
+
+  /* TODO: content styles */
   return (
     <>
       <Title>{post.title}</Title>
-      <InfoItem>{post.content}</InfoItem>
+      <div className="max-w-2xl mx-auto">
+        <div dangerouslySetInnerHTML={{ __html: content }} />
+      </div>
     </>
   );
 }
