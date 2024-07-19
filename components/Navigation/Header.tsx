@@ -1,7 +1,7 @@
-import Link from "next/link";
 import Divider from "../Divider";
 import { NavItem } from "./NavItem";
 import NavLogo from "./NavLogo";
+import ThemeSwitch from "./Mode";
 
 const navs = [
   { href: "/", label: "JC" },
@@ -15,6 +15,7 @@ const Header: React.FunctionComponent = () => {
       <header className="py-8 flex justify-between items-center space-x-3 h-36">
         <NavLogo />
         <div className="flex space-x-3">
+          <ThemeSwitch />
           {navs.map((nav) => {
             return (
               <NavItem key={nav.label} label={nav.label} href={nav.href} />

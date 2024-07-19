@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { Poppins } from "next/font/google";
 import NavWrapper from "@/components/Navigation/NavWrapper";
+import { ThemeProvider } from "next-themes";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,9 +23,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.className} text-primary`}>
-      <body>
-        <NavWrapper>{children}</NavWrapper>
+    <html
+      lang="en"
+      className={`${poppins.className} text-primary`}
+      suppressHydrationWarning
+    >
+      <body className="bg-white dark:text-white dark:bg-primary">
+        <ThemeProvider>
+          <NavWrapper>{children}</NavWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );

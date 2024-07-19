@@ -8,7 +8,7 @@ const Footer: React.FunctionComponent = () => {
       <div className="p-7 flex flex-col w-full space-x-3 mt-auto">
         <Link
           href="https://github.com/jchapps"
-          className=" fill-primary hover:fill-secondary transition"
+          className=" fill-primary hover:fill-secondary transition dark:fill-white"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

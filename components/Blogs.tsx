@@ -10,12 +10,9 @@ export default function Blogs() {
   return (
     <div className="max-laptop:pt-8">
       <Title href="/blog">Latest Posts</Title>
-      {allPosts.map(({ date, title, slug }) => (
-        <React.Fragment key={title}>
-          <InfoItem
-            key={title}
-            className="before:content-['☞'] before:text-primary pt-4 cursor-pointer max-w-fit hover:text-secondary transition"
-          >
+      {allPosts.map(({ date, title, slug }, i) => (
+        <React.Fragment key={i}>
+          <InfoItem className="before:content-['☞'] before:text-primary pt-4 cursor-pointer max-w-fit hover:text-secondary transition before:dark:text-white">
             <Link href={`blog/${slug}`}>&nbsp;{title}</Link>
           </InfoItem>
           <InfoItem className="text-sm">{date}</InfoItem>

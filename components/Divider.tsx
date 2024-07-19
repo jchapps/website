@@ -3,7 +3,11 @@ type Props = {
 };
 
 const Divider: React.FunctionComponent<Props> = ({ className }) => {
-  return <hr className={`rounded-md text-primary border ${className}`} />;
+  return (
+    <hr
+      className={`rounded-md text-primary dark:text-white border ${className}`}
+    />
+  );
 };
 
 export default Divider;
