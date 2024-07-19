@@ -2,6 +2,7 @@
 title: "JavaScript musings"
 date: "2024-05-01"
 slug: "callstack-and-queues"
+blurb: "Reflections on things I read about run time JS"
 ---
 
 - Recently I've found myself diving a little bit deeper into JavaScript in an attempt to learn what is _actually_ happening during run time.
